@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate')%>
+<div class="pend"><h2>Pending Tasks</h2></div>
+    <% for(let task of tasks){ %>
+        <% if(!task.isOver){ %>
+        <div class="task-box">
+            <h2 class="title"><%= task.title %></h2>
+            <p class="descr"><%= task.description %></p>
+            <div class="task-metadata">
+                <p>Due Date: <span class="due-date"><%= task.dueDate %></span></p>
+            </div>
+            <a class="card-link btn btn-info" href="/tasks/<%=task._id%>/edit">Edit</a>
+            <form class="d-inline" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            <form class="d-inline" action="/tasks/<%=task._id%>/isOver" method="POST">
+                <button class="btn btn-success">Mark as comlete</button>
+            </form>
+        </div>
+        <% } %>
+        <% } %>
+        <div class="comp">
+    <h2>completed tasks</h2>
+</div>
+    <% for(let task of tasks){ %>
+        <% if(task.isOver){ %>
+        <div class="task-box">
+            <h2 class="title"><%= task.title %></h2>
+            <p class="descr"><%= task.description %></p>
+            <div class="task-metadata">
+                <p>Due Date: <span class="due-date"><%= task.dueDate %></span></p>
+            </div>
+            <form class="d-inline" action="/tasks/<%=task._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            <form class="d-inline" action="/tasks/<%=task._id%>/isOver" method="POST">
+            <button  class="btn btn-success">incomplete</button>
+        </form>
+        </div>
+        <% } %>
+    <% } %>

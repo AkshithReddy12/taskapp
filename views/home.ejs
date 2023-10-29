@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App</title>
+
+    <link rel="stylesheet" href="/stylesheets/home.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600&family=Source+Sans+3&display=swap" rel="stylesheet">
+<style>
+    .craete{
+    font-size: 30px;
+    width: auto;
+    height: auto;
+}
+</style>
+
+
+
+</head>
+
+<body class="d-flex flex-column vh-100">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Task</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/createTask">Create</a>
+                    <a class="nav-link" href="/tasks">tasks</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <% if(!currentUser) {%>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/register">Register</a>
+                    <% } else {%>
+                    <a class="nav-link" href="/logout">Logout</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="outbox">
+        <div class="in1">
+            <p>The key is not to prioritize what's on your schedule,</p>
+            <p> but to schedule your priorities.</p>
+            <a class="b" href="/createTask"><button class="craete btn btn-outline-success">Create Task</button></a>
+                
+          
+        </div>
+        <div class="in2">
+            <img src="https://res.cloudinary.com/dmsthnisw/image/upload/v1698381771/ydgahwh80yb5dwdqefmw.jpg" alt="" height="300px" width="300px">
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
