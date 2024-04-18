@@ -62,7 +62,7 @@ app.use('/',taskRoutes)
 
 
 app.get("/",(req,res)=>{
-    res.send("welcome")
+    res.render("home");
 })
 
 app.get("/home",(req,res)=>{
